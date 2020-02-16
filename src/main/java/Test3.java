@@ -1,4 +1,4 @@
-public class Test {
+public class Test3 {
     public static void main(String[] args) {
         //System.out.println((int)('A') +3);
         //char d = 68;
