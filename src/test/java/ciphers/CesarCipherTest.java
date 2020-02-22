@@ -9,7 +9,7 @@ public class CesarCipherTest {
     protected final String textWithNoAlphabeticLetters = "112312[]][";
     protected final  String textWithAlphabeticLetters = "abcdd";
     protected final String exceptedTextForAlphabeticLetters = "defgg";
-    protected final String mixedText= "123ac";
+    protected final String mixedText= "123ac//";
     protected final String expectedTextForMixedText = "123df//";
     protected Cipher cesarCipher = new CesarCipher();
 

@@ -1,7 +1,9 @@
-package ciphers;
+package ciphers.impl;
+
+import ciphers.Cipher;
 
 public class Root13Cipher implements Cipher {
-    public final String ALPHABET =  "abcdefghijklmnoprstuwxyz";
+    public final String ALPHABET =  "abcdefghijklmnopqrstuwxyz";
     private final int ROOT_DISPLACEMENT = 13;
 
     @Override
@@ -9,7 +11,7 @@ public class Root13Cipher implements Cipher {
         StringBuilder stringBuilder = new StringBuilder();
         for(int i = 0 ; i<textToEncode.length(); i++){
             char sign = textToEncode.charAt(i);
-            if(Character.isAlphabetic(sign)) {
+            if(isIncluded(sign)) {
                 boolean isLowerCase = Character.isLowerCase(sign);
                 int indexAlphabet = ALPHABET.indexOf(Character.toLowerCase(sign));
                 int indexAfterDisplacement = (indexAlphabet + ROOT_DISPLACEMENT) % ALPHABET.length();
@@ -32,10 +34,10 @@ public class Root13Cipher implements Cipher {
         StringBuilder stringBuilder = new StringBuilder();
         for(int i = 0 ; i<textToDecode.length(); i++){
             char sign = textToDecode.charAt(i);
-            if(Character.isAlphabetic(sign)) {
+            if(isIncluded(sign)) {
                 boolean isLowerCase = Character.isLowerCase(sign);
                 int indexAlphabet = ALPHABET.indexOf(Character.toLowerCase(sign));
-                int indexAfterDisplacement = (indexAlphabet + ALPHABET.length()) % ROOT_DISPLACEMENT;
+                int indexAfterDisplacement = (indexAlphabet + ALPHABET.length()- ROOT_DISPLACEMENT) % ALPHABET.length();
                 if (isLowerCase) {
                     stringBuilder.append(ALPHABET.charAt(indexAfterDisplacement));
                 } else {
@@ -47,5 +49,9 @@ public class Root13Cipher implements Cipher {
         }
 
         return stringBuilder.toString();
+    }
+    private boolean isIncluded(char sign){
+        return ALPHABET.contains(Character.toString(sign).toLowerCase());
+
     }
 }
