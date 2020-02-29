@@ -1,5 +1,6 @@
 package controllers;
 
+import aplication.Main;
 import ciphers.Cipher;
 import ciphers.impl.CesarCipher;
 import file.utils.FileTool;
@@ -20,8 +21,10 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
     private Stage mainStage;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        mainStage = Main.getMainStage();
     }
     @FXML
     public TextArea inputTextArea;
