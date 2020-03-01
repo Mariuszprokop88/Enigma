@@ -6,9 +6,14 @@
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
 <children>
    <TextArea fx:id="inputTextArea" layoutX="47.0" layoutY="136.0" prefHeight="234.0" prefWidth="507.0" promptText="write text you want to encode" />
-   <Button layoutX="472.0" layoutY="70.0" mnemonicParsing="false" onAction="#triggerEncoding" prefHeight="39.0" prefWidth="103.0" text="ENCODE" />
-      <Button layoutX="472.0" layoutY="14.0" mnemonicParsing="false" onAction="#triggerDecoding" prefHeight="39.0" prefWidth="103.0" text="DECODE" />
-      <Button layoutX="239.0" layoutY="25.0" mnemonicParsing="false" onAction="#saveToFile" prefHeight="39.0" prefWidth="123.0" text="Save" />
-      <Button layoutX="240.0" layoutY="70.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="52.0" prefWidth="123.0" text="Load" />
+   <Button layoutX="471.0" layoutY="79.0" mnemonicParsing="false" onAction="#triggerEncoding" prefHeight="39.0" prefWidth="103.0" text="ENCODE" />
+      <Button layoutX="348.0" layoutY="79.0" mnemonicParsing="false" onAction="#triggerDecoding" prefHeight="39.0" prefWidth="103.0" text="DECODE" />
+      <Button layoutX="133.0" layoutY="25.0" mnemonicParsing="false" onAction="#saveToFile" prefHeight="39.0" prefWidth="103.0" text="Save" />
+      <Button layoutX="133.0" layoutY="79.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="39.0" prefWidth="103.0" text="Load" />
+      <ChoiceBox fx:id="cipherChoiceBox" layoutX="348.0" layoutY="36.0" prefHeight="30.0" prefWidth="226.0" />
+      <Label layoutX="8.0" layoutY="36.0" text="Choose save directory" />
+      <Label layoutX="16.0" layoutY="90.0" text="Choose file to load" />
+      <ScrollBar layoutX="540.0" layoutY="136.0" orientation="VERTICAL" prefHeight="234.0" prefWidth="14.0" />
+      <Label layoutX="406.0" layoutY="17.0" text="Choose method type" />
 </children>
 </AnchorPane>
